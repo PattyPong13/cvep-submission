@@ -63,7 +63,7 @@
     width: 85%;
     height: 100%;
     display: flex;
-    flex-direction: column;
+    flex-direction: column-reverse;
 }
 
 .health {
@@ -87,13 +87,13 @@
 }
 
 #chat-window {
-    width: calc(100% - 10px);
+    width: calc(100% - 25px);
     height: 70%;
     display: flex;
     flex-direction: column;
     overflow-y:auto;
-    padding-left:5px;
-    padding-right:5px;
+    padding-left:15px;
+    padding-right:10px;
 }
 
 #chat-window p {
@@ -107,12 +107,42 @@
 }
 
 .user {
+    position: relative;
     align-self: flex-end;
     background-color:#2ecc71;
 }
 
+.user::after {
+    content: "";
+    display: block;
+    position: absolute;
+
+    right: -10px;
+    top: 50%;
+    width: 0;
+    height: 0;
+    border-top: 8px solid transparent;
+    border-bottom: 8px solid transparent;
+    border-left: 14px solid #2ecc71;
+}
+
 .other-user {
+    position: relative;
     background-color:#ecf0f1;
+}
+
+.other-user::before {
+    content: "";
+    display: block;
+    position: absolute;
+
+    left: -12px;
+    top: 50%;
+    width: 0;
+    height: 0;
+    border-top: 8px solid transparent;
+    border-bottom: 8px solid transparent;
+    border-right: 14px solid #ecf0f1;
 }
 
 #options-window {
