@@ -49,20 +49,6 @@ var chat_log = {
         ["Player", "OH the Avengers one"],
         ["Adi", "Ya"],
         ["Hilman", "LOL I only watch for the action"],
-        ["Player", "Same, I just like the graphics and effects"],
-        ["Adi", "How dare youuu"],
-        ["Hilman", "Eh there’s a movie at 7pm"],
-        ["Hilman", "Just nice we eat dinner first, watch alr, then go get drinks"],
-        ["Adi", "Woi we underage you know"],
-	["Player", "Ehh nice one lah"],
-	["Player", "Meet at 5pm?"],
-	["Hilman", "@Adi bro I just meant dessert and stuff"],
-	["Hilman", "@Bryan sounds good. Movie is at Vivo City so we can just meet there"],
-	["Adi", "Ah, just nice, near my house. Okay, see yall"],
-	["Adi", "@Patrick you coming?"],
-	["Player", "@Patrick ya, you free also right?"],
-	["Patrick", "Uhm"],
-	["Patrick", "I think yall go ahead without me, I've got stuff"],
     ],
     "Patrick" : [
 
@@ -335,10 +321,20 @@ function displayOption(decisions) {
 async function startGame() {
     var group = chat_elements['Group'];
 
-    await addMessageEvent(group, newMessage("Hilman", "Ey bros anyone up for some picnic?"), message_notif, 1000);
-    await addMessageEvent(group, newMessage("Adi", "Eh I onz"), message_notif, 1000);
-    await addMessageEvent(group, newMessage("Patrick", "I not free sorry."), message_notif, 2000);
-
+    await addMessageEvent(group, newMessage("Player", "Same, I just like the graphics and effects"), message_notif, 1000);
+    await addMessageEvent(group, newMessage("Adi", "How dare youuu"), message_notif, 1000);
+    await addMessageEvent(group, newMessage("Hilman", "Eh there’s a movie at 7pm"), message_notif, 3000);
+    await addMessageEvent(group, newMessage("Hilman", "Just nice we eat dinner first, watch alr, then go get drinks"), message_notif, 2000);
+    await addMessageEvent(group, newMessage("Adi", "Woi we underage you know"), message_notif, 1500);
+    await addMessageEvent(group, newMessage("Player", "Ehh nice one lah"), message_notif, 1000);
+    await addMessageEvent(group, newMessage("Player", "Meet at 5pm?"), message_notif, 1000);
+    await addMessageEvent(group, newMessage("Hilman", "@Adi bro I just meant dessert and stuff"), message_notif, 1000);
+    await addMessageEvent(group, newMessage("Hilman", "@Bryan sounds good. Movie is at Vivo City so we can just meet there"), message_notif, 1000);
+    await addMessageEvent(group, newMessage("Adi", "Ah, just nice, near my house. Okay, see yall"), message_notif, 1000);
+    await addMessageEvent(group, newMessage("Adi", "@Patrick you coming?"), message_notif, 1500);
+    await addMessageEvent(group, newMessage("Patrick", "Uhm"), message_notif, 1500);
+    await addMessageEvent(group, newMessage("Patrick", "I think yall go ahead without me, I've got stuff"), message_notif, 1500);
+	
     displayOption(current_decision.descendants);
 }
 
