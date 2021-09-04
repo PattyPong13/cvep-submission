@@ -113,7 +113,7 @@ var diary_entries = [
         <br /><br />
         I’m sure Patrick likes her… even I would. He started smiling so much and dodged all the questions that Adi was asking him. The WHOLE train ride back home, he was just talking about her. I’ve never seen him so happy before.
         <br /><br />
-        I don’t really know whether I should feel sad or happy. I’m not comfortable talking to girls, especially when most of them aren’t suited to my style. Maybe Patrick will be the first to go and then Adi and Haliman… Haha I’ll lose all my friends. 
+        I don’t really know whether I should feel sad or happy. I’m not comfortable talking to girls, especially when most of them aren’t suited to my style. Maybe Patrick will be the first to go and then Adi and Hilman… Haha I’ll lose all my friends. 
         <br /><br />
         Patrick’s JC goals are questionable…
         <br /><br />
