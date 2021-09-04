@@ -53,7 +53,16 @@ var chat_log = {
         ["Adi", "How dare youuu"],
         ["Hilman", "Eh there’s a movie at 7pm"],
         ["Hilman", "Just nice we eat dinner first, watch alr, then go get drinks"],
-        ["Adi", "Adi: Woi we underage you know"],
+        ["Adi", "Woi we underage you know"],
+	["Player", "Ehh nice one lah"],
+	["Player", "Meet at 5pm?"],
+	["Hilman", "@Adi bro I just meant dessert and stuff"],
+	["Hilman", "@Bryan sounds good. Movie is at Vivo City so we can just meet there"],
+	["Adi", "Ah, just nice, near my house. Okay, see yall"],
+	["Adi", "@Patrick you coming?"],
+	["Player", "@Patrick ya, you free also right?"],
+	["Patrick", "Uhm"],
+	["Patrick", "I think yall go ahead without me, I've got stuff"],
     ],
     "Patrick" : [
 
