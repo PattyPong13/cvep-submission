@@ -28,6 +28,23 @@ var marianne_chat = [
     
 ];
 
+var diary_entries = [
+    [
+        "New Year's Day?!", "1 January 2021",
+        `Dear Diary, (haha, what a funny thing to say) 
+        How should I start this? Hilman has been telling me that I should start keeping diary entries to help me “reflect” on myself and things 
+        around me. He says it helps him note down key events and moments to which he can look back on. I guess I’ll keep a record of important 
+        events just in case I forget. New year, new me?
+        
+        This new year feels kind of surreal. Time has passed in a flash...Seems about the right time to start thinking about adulthood as well - 
+        what is independance, what is the significance of friendships going forward...
+        
+        Too many thoughts to fit in one entry
+        
+        Best regards? Bryan.`
+    ]
+]
+
 var current_chat = "";
 
 window.onload = function() {
