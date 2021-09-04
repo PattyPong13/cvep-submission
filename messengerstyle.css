@@ -96,20 +96,49 @@
     padding-right:10px;
 }
 
-#chat-window p {
-    font-size:20px;
-    padding:5px;
+#chat-window div {
+    font-size:18px;
     margin-top:5px;
     margin-bottom:5px;
-    max-width: 50%;
-    min-width: 30px;
+    max-width: 52%;
+    min-width: 40px;
     border-radius:5px;
+    padding: 5px;
+
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+#chat-window div p {
+    width: 100%;
+    margin: 0;
+}
+
+.Adi {
+    color: red;
+}
+
+.Hilman {
+    color: blue;
+}
+
+.Patrick {
+    color: orange;
+}
+
+.Marianne {
+    color: turquoise;
+}
+
+.Player {
+    color: purple;
 }
 
 .user {
-    position: relative;
     align-self: flex-end;
-    background-color:#2ecc71;
+    background-color: #2ecc71;;
 }
 
 .user::after {

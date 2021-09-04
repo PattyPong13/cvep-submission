@@ -1,37 +1,43 @@
-var group_chat = [
-    ["Adi", "Ehhhh @Bryan @Patrick how did your H2 math go?"],
-    ["Hilman", "Huh their paper ended alr ah? Morning paper?"],
-    ["Player", "Wahhh sian"],
-    ["Player", "Couldn't seem to do all the questions"],
-    ["Player", "@Hilman Ya, morning paper,1h paper only. It started at 8am"],
-    ["Hilman", "F"],
-    ["Hilman", "Bruh I thought yall could use GDC"],
-    ["Adi", "Ya bro this paper all the qns can use GDC right?"],
-    ["Player", "I mean yea we could but they put in weird variables"],
-    ["Player", "@Patrick could you do the question on the ducks?"],
-    ["Adi", "what ducks"],
-    ["Player", "Some stupid question on size of ducks in diff seasons"],
-    ["Player", "They made us find SD by hand cos they put in some weird algebra"],
-    ["Hilman", "Wah thank God I took H1 math"],
-    ["Adi", "Wait SD by hand? wth"],
-    ["Hilman", "No lah got some formula for that, very easy one"],
-];
+var chat_log = {
+    "Group": [
+        ["Adi", "Ehhhh @Bryan @Patrick how did your H2 math go?"],
+        ["Hilman", "Huh their paper ended alr ah? Morning paper?"],
+        ["Player", "Wahhh sian"],
+        ["Player", "Couldn't seem to do all the questions"],
+        ["Player", "@Hilman Ya, morning paper,1h paper only. It started at 8am"],
+        ["Hilman", "F"],
+        ["Hilman", "Bruh I thought yall could use GDC"],
+        ["Adi", "Ya bro this paper all the qns can use GDC right?"],
+        ["Player", "I mean yea we could but they put in weird variables"],
+        ["Player", "@Patrick could you do the question on the ducks?"],
+        ["Adi", "what ducks"],
+        ["Player", "Some stupid question on size of ducks in diff seasons"],
+        ["Player", "They made us find SD by hand cos they put in some weird algebra"],
+        ["Hilman", "Wah thank God I took H1 math"],
+        ["Adi", "Wait SD by hand? wth"],
+        ["Hilman", "No lah got some formula for that, very easy one"],
+    ],
+    "Patrick" : [
 
-var patrick_chat = [
-    
-]
+    ],
+    "Hilman": [
 
-var haliman_chat = [
-    
-];
+    ],
+    "Adi": [
 
-var adi_chat = [
-    
-];
+    ],
+    "Marianne": [
 
-var marianne_chat = [
-    
-];
+    ]
+};
+
+var chat_elements = {
+    "Group": loadChat("Group"),
+    "Patrick": loadChat("Patrick"),
+    "Hilman": loadChat("Hilman"),
+    "Adi": loadChat("Adi"),
+    "Marianne": loadChat("Marianne")
+};
 
 var diary_entries = [
     [
@@ -66,9 +72,18 @@ var diary_entries = [
         <br /><br />
         P.S. I still don’t know how to end a diary entry haha`
     ]
-]
+];
+
+decision_log = [
+
+];
 
 var current_chat = "";
+
+//helper sleep function from https://stackoverflow.com/questions/951021/what-is-the-javascript-version-of-sleep 
+function sleep(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+}
 
 function changeDiaryEntry(entry_num) {
     var diary_entry = document.getElementById('diary-entry');
@@ -81,53 +96,71 @@ function changeDiaryEntry(entry_num) {
         diary_entry.children[1].innerHTML = diary_entries[entry_num][1];
         diary_entry.children[2].innerHTML = diary_entries[entry_num][2];
     }
+
+    diary_entry.children[2].scrollTop = 0;
+}
+
+function newMessage(person, chat_contents) {
+    var message_container = document.createElement('div');
+    var person_name = document.createElement('p');
+    var message_content = document.createElement('p');
+    
+    if (person == "Player") {
+        message_container.setAttribute("class", "user");
+        person_name.innerHTML = "You";
+    } else {
+        message_container.setAttribute("class", "other-user");
+        person_name.innerHTML = person;
+    }
+
+    person_name.setAttribute("class", person);
+    message_content.innerHTML = chat_contents;
+
+    message_container.appendChild(person_name);
+    message_container.appendChild(message_content);
+
+    return message_container;
+}
+
+function loadChat(chat_name) {
+    var new_chat_window = document.createElement('div');
+    new_chat_window.setAttribute('id', 'chat-window');
+
+    var new_chat_log = chat_log[chat_name];
+    
+    for (var i = 0; i < new_chat_log.length; i++) {
+        var message_container = newMessage(new_chat_log[i][0], new_chat_log[i][1]);
+        new_chat_window.appendChild(message_container);
+    }
+
+    return new_chat_window;
+}
+
+function swapToNewChat(person) {
+    document.getElementById('chat-window').remove();
+    document.getElementById('messenger-main').appendChild(chat_elements[person]);
+
+    // auto scrolls down
+    chat_elements[person].scrollTop = chat_elements[person].scrollHeight;
+}
+
+async function startGame() {
+    var group = chat_elements['Group'];
+    await sleep(1000);
+    group.appendChild(newMessage("Hilman", "Ey bros anyone up for some picnic?"));
+    group.scrollTop = group.scrollHeight;
+    await sleep(3000);
+    group.appendChild(newMessage("Adi", "Eh I onz"));
+    group.scrollTop = group.scrollHeight;
+    await sleep(3000);
+    group.appendChild(newMessage("Patrick", "I not free sorry."));
+    group.scrollTop = group.scrollHeight;
 }
 
 window.onload = function() {
     var chat = document.getElementById('chat-window');
     chat.scrollTop = chat.scrollHeight;
-}
 
-function changeToGroup() {
-    swapToNewChat(group_chat);
-}
-
-function changeToPatrick() {
-    swapToNewChat(patrick_chat);
-}
-
-function changeToHaliman() {
-    swapToNewChat(haliman_chat);
-}
-
-function changeToAdi() {
-    swapToNewChat(adi_chat);
-}
-
-function changeToMarianne() {
-    swapToNewChat(marianne_chat);
-}
-
-function swapToNewChat(chat_log) {
-    
-    // Chat element for HAPB-M chat group
-    var new_chat_window = document.createElement('div');
-    new_chat_window.setAttribute('id', 'chat-window');
-    
-    for (var i = 0; i < chat_log.length; i++) {
-        var message = document.createElement('p');
-        if(chat_log[i][0] == "Player") {
-            message.setAttribute("class", "user");
-        } else {
-            message.setAttribute("class", "other-user");
-        }
-        message.innerHTML = chat_log[i][1];
-        new_chat_window.appendChild(message);
-    }
-
-    document.getElementById('chat-window').remove();
-    document.getElementById('messenger-main').appendChild(new_chat_window);
-
-    // auto scrolls down
-    new_chat_window.scrollTop = new_chat_window.scrollHeight;
+    swapToNewChat("Group");
+    startGame();
 }
