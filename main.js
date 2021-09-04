@@ -78,3 +78,8 @@ function swapToNewChat(chat_log) {
     // auto scrolls down
     new_chat_window.scrollTop = new_chat_window.scrollHeight;
 }
+
+window.onload = function() {
+    var chat = document.getElementById('chat-window')
+    chat.scrollTop = chat.scrollHeight;
+}
