@@ -37,20 +37,51 @@ var diary_entries = [
     [
         "New Year's Day?!", "1 January 2021",
         `Dear Diary, (haha, what a funny thing to say) 
+        <br /><br />
         How should I start this? Hilman has been telling me that I should start keeping diary entries to help me “reflect” on myself and things 
         around me. He says it helps him note down key events and moments to which he can look back on. I guess I’ll keep a record of important 
         events just in case I forget. New year, new me?
-        
+        <br /><br />
         This new year feels kind of surreal. Time has passed in a flash...Seems about the right time to start thinking about adulthood as well - 
         what is independance, what is the significance of friendships going forward...
-        
+        <br /><br />
         Too many thoughts to fit in one entry
-        
+        <br /><br />
         Best regards? Bryan.`
+    ],
+    [
+        "First Day of JC :P", "04 February 2021",
+        `Dear Diary,
+        <br /><br />
+        It’s official. I’ve stepped into my new JC. Dang this feels weird but… I’m finally a JC student and honestly - the sight of those three 
+        idiots in uniform really makes my heart feel fuzzy. Urgh I hate it when I feel like that but - The. Gang. Is. Back. For that, I am always 
+        grateful.  Hopefully we’ll be in the same class too. 
+        <br /><br />
+        Fun nugget! Patrick was so certain about making it here, that he bought the school uniform before the year even started. Spoil market… 
+        But I mean, of course he was going to get in, his O’s were straight As. This man’s always after excellence and perfection.
+        <br /><br />
+        On a side note, I gave Hilman a peek at my diary and he commented that it was very “bland”, and said that my entries should be more flavourful and exciting. Why do diaries have to be exciting anyway? I say his face is the one that looks bland. I kinda like that insult… I’ll use it next time I see him. Anyway, Adi did suggest I should add pictures. Feeling lazy...
+        <br /><br />
+        Best Regards? 
+        <br /><br />
+        P.S. I still don’t know how to end a diary entry haha`
     ]
 ]
 
 var current_chat = "";
+
+function changeDiaryEntry(entry_num) {
+    var diary_entry = document.getElementById('diary-entry');
+    if (entry_num > diary_entries.length - 1) {
+        diary_entry.children[0].innerHTML = "Diary entry does not exist";
+        diary_entry.children[1].innerHTML = "";
+        diary_entry.children[2].innerHTML = "";
+    } else {
+        diary_entry.children[0].innerHTML = diary_entries[entry_num][0];
+        diary_entry.children[1].innerHTML = diary_entries[entry_num][1];
+        diary_entry.children[2].innerHTML = diary_entries[entry_num][2];
+    }
+}
 
 window.onload = function() {
     var chat = document.getElementById('chat-window');
@@ -99,9 +130,4 @@ function swapToNewChat(chat_log) {
 
     // auto scrolls down
     new_chat_window.scrollTop = new_chat_window.scrollHeight;
-}
-
-window.onload = function() {
-    var chat = document.getElementById('chat-window')
-    chat.scrollTop = chat.scrollHeight;
 }

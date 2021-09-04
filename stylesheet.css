@@ -120,4 +120,11 @@ body {
 #entry-content {
     text-align: justify;
     text-justify: inter-word;
+    overflow: auto;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+#entry-content::-webkit-scrollbar {
+    display: none;
 }
