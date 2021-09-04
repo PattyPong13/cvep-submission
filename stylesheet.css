@@ -35,8 +35,7 @@ body {
     width: 30%;
     height: 100%;
     display: flex;
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(25px);
+    background: #bdc3c7;
 }
 
 #date {
@@ -57,13 +56,12 @@ body {
 
 #diary-list {
     width: calc(70% - 30px);
-    height: calc(100% - 10px);
+    height: calc(100% - 20px);
     display: flex;
     flex-direction: column;
     font-size: 20px;
-    padding: 10px 10px 0px 20px;
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(25px);
+    padding: 10px 10px 10px 20px;
+    background: #bdc3c7;
     overflow: auto;
 }
 
@@ -84,7 +82,6 @@ body {
     border: 1px solid rgba(255, 255, 255, 0.5);
     border-right: 1px solid rgba(255, 255, 255, 0.2);
     border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-    backdrop-filter: blur(25px);
 }
 
 #fake-1 {
@@ -97,7 +94,6 @@ body {
     box-shadow: 0px 25px 45px rgba(255, 255, 255, 0.1);
     border-radius: 10px;
     border: 1px solid rgba(255, 255, 255, 0.5);
-    backdrop-filter: blur(25px);
 }
 #diary-entry {
     position: relative;
@@ -111,7 +107,7 @@ body {
     box-shadow: 0px 25px 45px rgba(255, 255, 255, 0.1);
     border-radius: 10px;
     border: 1px solid rgba(255, 255, 255, 0.5);
-    backdrop-filter: blur(25px);
+    backdrop-filter: blur(10px);
     padding: 10px 30px 20px 30px;
 }
 
