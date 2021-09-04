@@ -11,7 +11,7 @@ var group_chat = [
     ["Player", "@Patrick could you do the question on the ducks?"],
     ["Adi", "what ducks"],
     ["Player", "Some stupid question on size of ducks in diff seasons"],
-    ["Player", "They made us find SD by hand cos they put in some weird algebra"]
+    ["Player", "They made us find SD by hand cos they put in some weird algebra"],
     ["Hilman", "Wah thank God I took H1 math"],
     ["Adi", "Wait SD by hand? wth"],
     ["Hilman", "No lah got some formula for that, very easy one"],
